@@ -5,128 +5,148 @@
 <title>For My Love ❤️</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        color: black;
-        overflow: hidden;
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f5f5f5;
+    overflow: hidden;
+}
 
-        /* HEART BACKGROUND FIX */
-        background-color: #f2f2f2;
-    }
+/* HEART BACKGROUND */
+.hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
 
-    /* REPEATING HEARTS */
-    .hearts {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-        pointer-events: none;
-    }
+.hearts span {
+    position: absolute;
+    font-size: 28px;
+    opacity: 0.4;
+}
 
-    .hearts span {
-        position: absolute;
-        color: red;
-        font-size: 30px;
-        opacity: 0.6;
-    }
+.hearts span:nth-child(1){ top:10%; left:20%;}
+.hearts span:nth-child(2){ top:30%; left:50%;}
+.hearts span:nth-child(3){ top:70%; left:10%;}
+.hearts span:nth-child(4){ top:50%; left:80%;}
+.hearts span:nth-child(5){ top:80%; left:40%;}
+.hearts span:nth-child(6){ top:20%; left:70%;}
+.hearts span:nth-child(7){ top:60%; left:60%;}
+.hearts span:nth-child(8){ top:40%; left:30%;}
 
-    /* RANDOM POSITIONS */
-    .hearts span:nth-child(1) { top: 10%; left: 20%; }
-    .hearts span:nth-child(2) { top: 30%; left: 50%; }
-    .hearts span:nth-child(3) { top: 70%; left: 10%; }
-    .hearts span:nth-child(4) { top: 50%; left: 80%; }
-    .hearts span:nth-child(5) { top: 80%; left: 40%; }
-    .hearts span:nth-child(6) { top: 20%; left: 70%; }
-    .hearts span:nth-child(7) { top: 60%; left: 60%; }
-    .hearts span:nth-child(8) { top: 40%; left: 30%; }
+/* SCREEN */
+.screen {
+    position: relative;
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
 
-    .screen {
-        position: relative;
-        display: none;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        z-index: 1;
-    }
+.active {
+    display: flex;
+}
 
-    .active {
-        display: flex;
-    }
+/* POPUP (CENTER FIXED) */
+.popup {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    width: 260px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
 
-    /* POPUP */
-    .popup {
-        background: #eee;
-        padding: 25px;
-        border-radius: 20px;
-        width: 260px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+.popup h2 {
+    margin: 0;
+}
 
-    .popup h2 {
-        margin: 0;
-        font-weight: bold;
-    }
+.popup p {
+    margin: 15px 0;
+}
 
-    .popup p {
-        margin: 15px 0;
-        font-size: 18px;
-    }
+.popup button {
+    margin-top: 10px;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+}
 
-    .popup button {
-        width: 100%;
-        padding: 12px;
-        border: none;
-        border-top: 1px solid #999;
-        border-radius: 0 0 20px 20px;
-        background: white;
-        color: black;
-        font-size: 16px;
-        cursor: pointer;
-    }
+/* MESSAGE BOX */
+.message-box {
+    width: 80%;
+    max-width: 520px;
+    height: 65vh;
+    overflow-y: auto;
+    background: rgba(255,255,255,0.95);
+    padding: 25px;
+    border-radius: 16px;
+    line-height: 1.7;
+    text-align: left;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
 
-    button {
-        padding: 12px 20px;
-        font-size: 18px;
-        border: none;
-        border-radius: 10px;
-        background: #ff4d6d;
-        color: white;
-        cursor: pointer;
-        margin-top: 20px;
-    }
+/* CENTER ONLY PAGE 3 */
+.center-box {
+    width: 80%;
+    max-width: 520px;
+    height: 40vh;
 
-    h1 {
-        background: rgba(0,0,0,0.5);
-        padding: 20px;
-        border-radius: 15px;
-        color: white;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    img {
-        width: 250px;
-        border-radius: 15px;
-    }
+    text-align: center;
+
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* BUTTONS */
+.btn-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: #ff4d6d;
+    color: white;
+    cursor: pointer;
+}
+
+/* SIGNATURE */
+.right {
+    width: 100%;
+    text-align: right;
+    margin-top: 15px;
+    font-style: italic;
+}
 </style>
-
 </head>
+
 <body>
 
-<!-- HEART BACKGROUND -->
+<!-- HEARTS -->
 <div class="hearts">
-    <span>❤️</span>
-    <span>❤️</span>
-    <span>❤️</span>
-    <span>❤️</span>
-    <span>❤️</span>
-    <span>❤️</span>
-    <span>❤️</span>
-    <span>❤️</span>
+<span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span>
+<span>❤️</span><span>❤️</span><span>❤️</span><span>❤️</span>
 </div>
 
-<!-- Screen 1 -->
+<!-- PAGE 1 -->
 <div class="screen active" id="screen1">
     <div class="popup">
         <h2>Reminder</h2>
@@ -135,26 +155,100 @@
     </div>
 </div>
 
-<!-- Screen 2 -->
+<!-- PAGE 2 -->
 <div class="screen" id="screen2">
-    <h1>
-        From the day I met you ❤️<br><br>
-        You became my happiness 💕<br><br>
-        I love you forever 😘
-    </h1>
-    <button onclick="nextScreen(3)">Next ➡️</button>
+<div class="message-box">
+
+<h2>Hello Darling ❤️</h2>
+
+<p>
+I love you soooo much 💕. I know you know that I love you, but I still want to tell you again—just like a reminder💖. Also, I just wanted to make you feel so special because you are the special person and you deserve this ❤️.
+
+
+<p>
+I know sometimes you feel like you are not good enough for me, but only I know how good, sweet, important, caring, and responsible you are towards me, and how you handle me and my mood swings 🥺💞.
+</p>
+
+<p>
+I know sometimes I do such stupid things and after some time I come and say sorry 😅, but seriously darling, I don’t know why I’m so open with you. I feel like I can say and do anything in front of you. I can be as silly and as childish as I am 💕.
+</p>
+
+<p>
+I don’t know, but you are the one who made me feel these things and made me feel like I can do anything in front of you 🥰.
+</p>
+
+<p>
+I never think twice before doing anything with you or in front of you 💖.
+</p>
+
+<p>
+These things make you the one every girl wants and deserves in her life ❤️.
+</p>
+
+<p>
+"You are the one whom I dreamed of in my partner 💫"
+</p>
+
+<p>
+I know we met late, maybe too late, but thank God that we met 🥹❤️. I guess we both needed each other at that time and in upcoming future too 💫️🥹❤️.
+</p>
+
+<p>
+Your mom raised a great man who makes his girl happy and proud 🥹💖
+</p>
+
+<p>
+I don’t know what I saw in you, but I guess God showed me the way to be happy and to make you feel the love you were holding inside ✨
+</p>
+
+<p>
+So darling, don’t ever think that you are not good enough for me, okay??? 🥺❤️  
+I guess you are feeling something good now… hehe 😄💕
+</p>
+
 </div>
 
-<!-- Screen 3 -->
+<div class="btn-group">
+    <button onclick="nextScreen(1)">⬅️ Previous</button>
+    <button onclick="nextScreen(3)">Next ➡️</button>
+</div>
+</div>
+
+<!-- PAGE 3 -->
 <div class="screen" id="screen3">
+<div class="center-box">
+
+<p>
+Sorry darling for being so weird these last 2 weeks… I’m really sorry 🥺💔  
+But I LOVE YOU SO MUCH ❤️❤️❤️
+</p>
+
+<p class="right">
+— Your Pitpapdi 😄❤️
+</p>
+
+</div>
+
+<div class="btn-group">
+    <button onclick="nextScreen(2)">⬅️ Previous</button>
+    <button onclick="nextScreen(4)">Darling click here for other details 💌</button>
+</div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="screen" id="screen4">
     <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
-    <h1>Sending you hugs & kisses 😘💖</h1>
+    <h2>Sending you hugs & kisses 😘💖</h2>
+
+    <div class="btn-group">
+        <button onclick="nextScreen(3)">⬅️ Previous</button>
+    </div>
 </div>
 
 <script>
-function nextScreen(screenNumber) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById('screen' + screenNumber).classList.add('active');
+function nextScreen(n){
+    document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+    document.getElementById('screen'+n).classList.add('active');
 }
 </script>
 
