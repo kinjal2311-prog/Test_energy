@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: url('https://i.imgur.com/8Km9tLL.jpg'); /* heart bg */
+        background-size: cover;
+        color: white;
+    }
+
+    .screen {
+        display: none;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .active {
+        display: flex;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        background: #ff4d6d;
+        color: white;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+
+    h1 {
+        background: rgba(0,0,0,0.5);
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    img {
+        width: 250px;
+        border-radius: 15px;
+    }
+</style>
+</head>
+<body>
+
+<!-- Screen 1 -->
+<div class="screen active" id="screen1">
+    <button onclick="nextScreen(2)">💖 Click Here 💖</button>
+</div>
+
+<!-- Screen 2 -->
+<div class="screen" id="screen2">
+    <h1>
+        From the day I met you ❤️<br><br>
+        You became my happiness 💕<br><br>
+        I love you forever 😘
+    </h1>
+    <button onclick="nextScreen(3)">Next ➡️</button>
+</div>
+
+<!-- Screen 3 -->
+<div class="screen" id="screen3">
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="cute gif">
+    <h1>Sending you hugs & kisses 😘💖</h1>
+</div>
+
+<script>
+function nextScreen(screenNumber) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen' + screenNumber).classList.add('active');
+}
+</script>
+
+</body>
+</html>
