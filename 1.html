@@ -3,26 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <title>For My Love ❤️</title>
+
 <style>
     body {
         margin: 0;
         font-family: Arial, sans-serif;
         text-align: center;
-        background: url('https://i.imgur.com/8Km9tLL.jpg'); /* heart bg */
-        background-size: cover;
-        color: white;
+        color: black;
+        overflow: hidden;
+
+        /* HEART BACKGROUND FIX */
+        background-color: #f2f2f2;
     }
 
+    /* REPEATING HEARTS */
+    .hearts {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .hearts span {
+        position: absolute;
+        color: red;
+        font-size: 30px;
+        opacity: 0.6;
+    }
+
+    /* RANDOM POSITIONS */
+    .hearts span:nth-child(1) { top: 10%; left: 20%; }
+    .hearts span:nth-child(2) { top: 30%; left: 50%; }
+    .hearts span:nth-child(3) { top: 70%; left: 10%; }
+    .hearts span:nth-child(4) { top: 50%; left: 80%; }
+    .hearts span:nth-child(5) { top: 80%; left: 40%; }
+    .hearts span:nth-child(6) { top: 20%; left: 70%; }
+    .hearts span:nth-child(7) { top: 60%; left: 60%; }
+    .hearts span:nth-child(8) { top: 40%; left: 30%; }
+
     .screen {
+        position: relative;
         display: none;
         height: 100vh;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        z-index: 1;
     }
 
     .active {
         display: flex;
+    }
+
+    /* POPUP */
+    .popup {
+        background: #eee;
+        padding: 25px;
+        border-radius: 20px;
+        width: 260px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .popup h2 {
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .popup p {
+        margin: 15px 0;
+        font-size: 18px;
+    }
+
+    .popup button {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-top: 1px solid #999;
+        border-radius: 0 0 20px 20px;
+        background: white;
+        color: black;
+        font-size: 16px;
+        cursor: pointer;
     }
 
     button {
@@ -40,6 +102,7 @@
         background: rgba(0,0,0,0.5);
         padding: 20px;
         border-radius: 15px;
+        color: white;
     }
 
     img {
@@ -47,12 +110,29 @@
         border-radius: 15px;
     }
 </style>
+
 </head>
 <body>
 
+<!-- HEART BACKGROUND -->
+<div class="hearts">
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+    <span>❤️</span>
+</div>
+
 <!-- Screen 1 -->
 <div class="screen active" id="screen1">
-    <button onclick="nextScreen(2)">💖 Click Here 💖</button>
+    <div class="popup">
+        <h2>Reminder</h2>
+        <p>You are loved ❤️</p>
+        <button onclick="nextScreen(2)">Click here Darling ❤️</button>
+    </div>
 </div>
 
 <!-- Screen 2 -->
@@ -67,7 +147,7 @@
 
 <!-- Screen 3 -->
 <div class="screen" id="screen3">
-    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="cute gif">
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
     <h1>Sending you hugs & kisses 😘💖</h1>
 </div>
 
